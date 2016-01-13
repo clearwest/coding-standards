@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>JavaScript Coding Standards - ClearWest Coding Standards</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">ClearWest Coding Standards</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../php/php-coding-standards/">PHP Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../php/php-documentation-standards/">PHP Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">JavaScript <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">JavaScript Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../js-documentation-standards/">JavaScript Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../html/">HTML</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../css/">CSS</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../../php/php-documentation-standards/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../js-documentation-standards/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#javascript-coding-standards">JavaScript Coding Standards</a></li>
+        
+            <li><a href="#spacing">Spacing</a></li>
+        
+            <li><a href="#semicolons">Semicolons</a></li>
+        
+            <li><a href="#indentation-and-line-breaks">Indentation and Line Breaks</a></li>
+        
+            <li><a href="#assignments-and-globals">Assignments and Globals</a></li>
+        
+            <li><a href="#naming-conventions">Naming Conventions</a></li>
+        
+            <li><a href="#comments">Comments</a></li>
+        
+            <li><a href="#equality">Equality</a></li>
+        
+            <li><a href="#type-checks">Type Checks</a></li>
+        
+            <li><a href="#strings">Strings</a></li>
+        
+            <li><a href="#switch-statements">Switch Statements</a></li>
+        
+            <li><a href="#best-practices">Best Practices</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="javascript-coding-standards">JavaScript Coding Standards</h1>
+<p>These guidelines are based on the <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/">WordPress JavaScript Coding Standards</a>, but have been modified to serve as a general purpose standard for any JavaScript code.</p>
+<p>The WordPress JavaScript Coding Standards are adapted from the <a href="http://contribute.jquery.org/style-guide/js">jQuery JavaScript Style Guide</a>, but differ in the following ways:</p>
+<ul>
+<li>WordPress uses single quotation marks for string declarations.</li>
+<li>Case statements are indented within switch blocks.</li>
+<li>Function contents are consistently indented, including full-file closure wrappers.</li>
+<li>Some whitespace rules differ, for consistency with the WordPress PHP coding standards.</li>
+<li>jQuery’s 100-character hard line limit is encouraged, but not strictly enforced.</li>
+</ul>
+<h2 id="spacing">Spacing</h2>
+<p>Use spaces liberally throughout your code. “When in doubt, space it out.”</p>
+<p>These rules encourage liberal spacing for improved developer readability. The minification process creates a file that is optimized for browsers to read and process.</p>
+<ul>
+<li>Indentation with tabs.</li>
+<li>No whitespace at the end of line or on blank lines.</li>
+<li>Lines should usually be no longer than 80 characters, and should not exceed 100 (counting tabs as 4 spaces). This is a “soft” rule, but long lines generally indicate unreadable or disorganized code.</li>
+<li><code>if</code>/<code>else</code>/<code>for</code>/<code>while</code>/<code>try</code> blocks should <strong>always use braces</strong>, and always go on multiple lines.</li>
+<li>Unary special-character operators (e.g., <code>++</code>, <code>--</code>) must not have space next to their operand.</li>
+<li>Any <code>,</code> and <code>;</code> must not have preceding space.</li>
+<li>Any <code>;</code> used as a statement terminator must be at the end of the line.</li>
+<li>Any <code>:</code> after a property name in an object definition must not have preceding space.</li>
+<li>The <code>?</code> and <code>:</code> in a ternary conditional must have space on both sides.</li>
+<li>No filler spaces in empty constructs (e.g., <code>{}</code>, <code>[]</code>, <code>fn()</code>).</li>
+<li>There should be a new line at the end of each file.</li>
+<li>Any <code>!</code> negation operator should have a following space.</li>
+<li>All function bodies are indented by one tab, even if the entire file is wrapped in a closure.</li>
+<li>Spaces may align code within documentation blocks or within a line, but only tabs should be used at the start of a line.</li>
+</ul>
+<p>Whitespace can easily accumulate at the end of a line – avoid this, as trailing whitespace is caught as an error in JSHint. One way to catch whitespace buildup is enabling visible whitespace characters within your text editor.</p>
+<h3 id="objects">Objects</h3>
+<p>Object declarations can be made on a single line if they are short (remember the line length guidelines). When an object declaration is too long to fit on one line, there must be one property per line. Property names only need to be quoted if they are reserved words or contain special characters:</p>
+<pre><code class="js">// Preferred
+var map = {
+    ready: 9,
+    when: 4,
+    'you are': 15
+};
+
+// Acceptable for small objects
+var map = { ready: 9, when: 4, 'you are': 15 };
+
+// Bad
+var map = { ready: 9,
+    when: 4, 'you are': 15 };
+</code></pre>
+
+<h3 id="arrays-and-function-calls">Arrays and Function Calls</h3>
+<p>Always include extra spaces around elements and arguments:</p>
+<pre><code class="js">array = [ a, b ];
+
+foo( arg );
+
+foo( 'string', object );
+
+foo( options, object[ property ] );
+
+foo( node, 'property', 2 );
+</code></pre>
+
+<p>Exceptions:</p>
+<pre><code class="js">// For consistency with our PHP standards, do not include a space around
+// string literals or integers used as key values in array notation:
+prop = object['default'];
+firstArrayElement = arr[0];
+
+// Function with a callback, object, or array as the sole argument:
+// No space on either side of the argument
+foo(function() {
+    // Do stuff
+});
+
+foo({
+    a: 'alpha',
+    b: 'beta'
+});
+
+foo([
+    'alpha',
+    'beta'
+]);
+
+// Function with a callback, object, or array as the first argument:
+// No space before the first argument
+foo(function() {
+    // Do stuff
+}, options );
+
+// Function with a callback, object, or array as the last argument:
+// No space after after the last argument
+foo( data, function() {
+    // Do stuff
+});
+</code></pre>
+
+<h3 id="examples-of-good-spacing">Examples of Good Spacing</h3>
+<pre><code class="js">var i;
+
+if ( condition ) {
+    doSomething( 'with a string' );
+} else if ( otherCondition ) {
+    otherThing({
+        key: value,
+        otherKey: otherValue
+    });
+} else {
+    somethingElse( true );
+}
+
+// Unlike jQuery, WordPress prefers a space after the ! negation operator.
+// This is also done to conform to our PHP standards.
+while ( ! condition ) {
+    iterating++;
+}
+
+for ( i = 0; i &lt; 100; i++ ) {
+    object[ array[ i ] ] = someFn( i );
+    $( '.container' ).val( array[ i ] );
+}
+
+try {
+    // Expressions
+} catch ( e ) {
+    // Expressions
+}
+</code></pre>
+
+<h2 id="semicolons">Semicolons</h2>
+<p><strong>Always terminate statements with a <code>;</code>, even when it is considered optional.</strong></p>
+<h2 id="indentation-and-line-breaks">Indentation and Line Breaks</h2>
+<p>Indentation and line breaks add readability to complex statements.</p>
+<p>Tabs should be used for indentation. Even if the entire file is contained in a closure (i.e., an immediately invoked function), the contents of that function should be indented by one tab:</p>
+<pre><code class="js">(function( $ ) {
+    // Expressions indented
+
+    function doSomething() {
+        // Expressions indented
+    }
+})( jQuery );
+</code></pre>
+
+<h3 id="blocks-and-curly-braces">Blocks and Curly Braces</h3>
+<p><code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, and <code>try</code> blocks should always use braces, and always go on multiple lines. The opening brace should be on the same line as the function definition, the conditional, or the loop. The closing brace should be on the line directly following the last statement of the block.</p>
+<pre><code class="js">var a, b, c;
+
+if ( myFunction() ) {
+    // Expressions
+} else if ( ( a &amp;&amp; b ) || c ) {
+    // Expressions
+} else {
+    // Expressions
+}
+</code></pre>
+
+<h3 id="multi-line-statements">Multi-line Statements</h3>
+<p>When a statement is too long to fit on one line, line breaks must occur after an operator.</p>
+<pre><code class="js">// Bad
+var html = '&lt;p&gt;The sum of ' + a + ' and ' + b + ' plus ' + c
+    + ' is ' + ( a + b + c );
+
+// Good
+var html = '&lt;p&gt;The sum of ' + a + ' and ' + b + ' plus ' + c +
+    ' is ' + ( a + b + c );
+</code></pre>
+
+<p>Lines should be broken into logical groups if it improves readability, such as splitting each expression of a ternary operator onto its own line, even if both will fit on a single line.</p>
+<pre><code class="js">// Acceptable
+var baz = ( true === conditionalStatement() ) ? 'thing 1' : 'thing 2';
+
+// Better
+var baz = firstCondition( foo ) &amp;&amp; secondCondition( bar ) ?
+    qux( foo, bar ) :
+    foo;
+</code></pre>
+
+<p>When a conditional is too long to fit on one line, successive lines must be indented one extra level to distinguish them from the body.</p>
+<pre><code class="js">if ( firstCondition() &amp;&amp; secondCondition() &amp;&amp;
+        thirdCondition() ) {
+    doStuff();
+}
+</code></pre>
+
+<h3 id="chained-method-calls">Chained Method Calls</h3>
+<p>When a chain of method calls is too long to fit on one line, there must be one call per line, with the first call on a separate line from the object the methods are called on. If the method changes the context, an extra level of indentation must be used.</p>
+<pre><code class="js">elements
+    .addClass( 'foo' )
+    .children()
+        .html( 'hello' )
+    .end()
+    .appendTo( 'body' );
+</code></pre>
+
+<h2 id="assignments-and-globals">Assignments and Globals</h2>
+<h3 id="declaring-variables-with-var">Declaring Variables With var</h3>
+<p>Each function should begin with a single comma-delimited <code>var</code> statement that declares any local variables necessary. If a function does not declare a variable using <code>var</code>, that variable can leak into an outer scope (which is frequently the global scope, a worst-case scenario), and can unwittingly refer to and modify that data.</p>
+<p>Assignments within the <code>var</code> statement should be listed on individual lines, while declarations can be grouped on a single line. Any additional lines should be indented with an additional tab. Objects and functions that occupy more than a handful of lines should be assigned outside of the var statement, to avoid over-indentation.</p>
+<pre><code class="js">// Good
+var k, m, length,
+    // Indent subsequent lines by one tab
+    value = 'WordPress';
+
+// Bad
+var foo = true;
+var bar = false;
+var a;
+var b;
+var c;
+</code></pre>
+
+<h3 id="globals">Globals</h3>
+<p>In the past, WordPress core made heavier use of global variables. Since core JavaScript files are sometimes used within plugins, existing globals should not be removed.</p>
+<p>All globals used within a file should be documented at the top of that file. Multiple globals can be comma-separated.</p>
+<p>This example would make <code>passwordStrength</code> an allowed global variable within that file:</p>
+<pre><code class="js">/* global passwordStrength:true */
+</code></pre>
+
+<p>The “true” after <code>passwordStrength</code> means that this global is being defined within this file. If you are accessing a global which is defined elsewhere, omit <code>:true</code> to designate the global as read-only.</p>
+<h4 id="common-libraries">Common Libraries</h4>
+<p>Backbone, jQuery, Underscore, and the global <code>wp</code> object are all registered as allowed globals in the root <code>.jshintrc</code> file.</p>
+<p>Backbone and Underscore may be accessed directly at any time. jQuery should be accessed through <code>$</code> by passing the <code>jQuery</code> object into an anonymous function:</p>
+<pre><code class="js">(function( $ ) {
+  // Expressions
+})( jQuery );
+</code></pre>
+
+<p>This will negate the need to call <code>.noConflict()</code>, or to set <code>$</code> using another variable.</p>
+<p>Files which add to, or modify, the <code>wp</code> object must safely access the global to avoid overwriting previously set properties:</p>
+<pre><code class="js">// At the top of the file, set &quot;wp&quot; to its existing value (if present)
+window.wp = window.wp || {};
+</code></pre>
+
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>Variable and function names should be full words, using camel case with a lowercase first letter. This is an area where this standard differs from the WordPress PHP coding standards.</p>
+<p>Constructors intended for use with <code>new</code> should have a capital first letter (UpperCamelCase).</p>
+<p>Names should be descriptive, but not excessively so. Exceptions are allowed for iterators, such as the use of <code>i</code> to represent the index in a loop.</p>
+<h2 id="comments">Comments</h2>
+<p>Comments come before the code to which they refer, and should always be preceded by a blank line. Capitalize the first letter of the comment, and include a period at the end when writing full sentences. There must be a single space between the comment token (//) and the comment text.</p>
+<p>Single line comments:</p>
+<pre><code class="js">someStatement();
+
+// Explanation of something complex on the next line
+$( 'p' ).doSomething();
+</code></pre>
+
+<p>Multi-line comments should be used for long comments:</p>
+<pre><code class="js">/**
+ * This is a comment that is long enough to warrant being stretched
+ * over the span of multiple lines.
+ */
+</code></pre>
+
+<p>Inline comments are allowed as an exception when used to annotate special arguments in formal parameter lists:</p>
+<pre><code class="js">function foo( types, selector, data, fn, /* INTERNAL */ one ) {
+    // Do stuff
+}
+</code></pre>
+
+<h2 id="equality">Equality</h2>
+<p>Strict equality checks (<code>===</code>) must be used in favor of abstract equality checks (<code>==</code>). The only exception is when checking for both <code>undefined</code> and <code>null</code> by way of <code>null</code>.</p>
+<pre><code class="js">// Check for both undefined and null values, for some important reason.
+if ( undefOrNull == null ) {
+    // Expressions
+}
+</code></pre>
+
+<h2 id="type-checks">Type Checks</h2>
+<p>These are the preferred ways of checking the type of an object:</p>
+<ul>
+<li>String: <code>typeof object === 'string'</code></li>
+<li>Number: <code>typeof object === 'number'</code></li>
+<li>Boolean: <code>typeof object === 'boolean'</code></li>
+<li>Object: <code>typeof object === 'object'</code> or <code>_.isObject( object )</code></li>
+<li>Plain Object: <code>jQuery.isPlainObject( object )</code></li>
+<li>Function: <code>_.isFunction( object )</code> or <code>jQuery.isFunction( object )</code></li>
+<li>Array: <code>_.isArray( object )</code> or <code>jQuery.isArray( object )</code></li>
+<li>Element: <code>object.nodeType</code> or <code>_.isElement( object )</code></li>
+<li>null: <code>object === null</code></li>
+<li>null or undefined: <code>object == null</code></li>
+<li>undefined:<ul>
+<li>Global Variables: <code>typeof variable === 'undefined'</code></li>
+<li>Local Variables: <code>variable === undefined</code></li>
+<li>Properties: <code>object.prop === undefined</code></li>
+<li>Any of the above: <code>_.isUndefined( object )</code></li>
+</ul>
+</li>
+</ul>
+<p>Anywhere Backbone or Underscore are already used, you are encouraged to use Underscore.js‘s type checking methods over jQuery’s.</p>
+<h2 id="strings">Strings</h2>
+<p>Use single-quotes for string literals:</p>
+<pre><code class="js">var myStr = 'strings should be contained in single quotes';
+</code></pre>
+
+<p>When a string contains single quotes, they need to be escaped with a backslash (<code>\</code>):</p>
+<pre><code class="js">// Escape single quotes within strings:
+'Note the backslash before the \'single quotes\'';
+</code></pre>
+
+<h2 id="switch-statements">Switch Statements</h2>
+<p>The usage of <code>switch</code> statements is generally discouraged, but can be useful when there are a large number of cases – especially when multiple cases can be handled by the same block, or fall-through logic (the <code>default</code> case) can be leveraged.</p>
+<p>When using <code>switch</code> statements:</p>
+<p>– Use a <code>break</code> for each case other than <code>default</code>. When allowing statements to “fall through,” note that explicitly.
+– Indent <code>case</code> statements one tab within the <code>switch</code>.</p>
+<pre><code class="js">switch ( event.keyCode ) {
+
+    // ENTER and SPACE both trigger x()
+    case $.ui.keyCode.ENTER:
+    case $.ui.keyCode.SPACE:
+        x();
+        break;
+    case $.ui.keyCode.ESCAPE:
+        y();
+        break;
+    default:
+        z();
+}
+</code></pre>
+
+<p>It is not recommended to return a value from within a switch statement: use the <code>case</code> blocks to set values, then <code>return</code> those values at the end.</p>
+<pre><code class="js">function getKeyCode( keyCode ) {
+    var result;
+
+    switch ( event.keyCode ) {
+        case $.ui.keyCode.ENTER:
+        case $.ui.keyCode.SPACE:
+            result = 'commit';
+            break;
+        case $.ui.keyCode.ESCAPE:
+            result = 'exit';
+            break;
+        default:
+            result = 'default';
+    }
+
+    return result;
+}
+</code></pre>
+
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="use-strict">Use strict</h3>
+<p>All new code should <code>use strict</code> (unless there's a very good reason not to).</p>
+<h3 id="arrays">Arrays</h3>
+<p>Creating arrays in JavaScript should be done using the shorthand <code>[]</code> constructor rather than the <code>new Array()</code> notation.</p>
+<pre><code class="js">var myArray = [];
+</code></pre>
+
+<p>You can initialize an array during construction:</p>
+<pre><code class="js">var myArray = [ 1, 'WordPress', 2, 'Blog' ];
+</code></pre>
+
+<p>In JavaScript, associative arrays are defined as objects.</p>
+<h3 id="objects_1">Objects</h3>
+<p>There are many ways to create objects in JavaScript. Object literal notation, <code>{}</code>, is both the most performant, and also the easiest to read.</p>
+<pre><code class="js">var myObj = {};
+</code></pre>
+
+<p>Object literal notation should be used unless the object requires a specific prototype, in which case the object should be created by calling a constructor function with <code>new</code>.</p>
+<pre><code class="js">var myObj = new ConstructorMethod();
+</code></pre>
+
+<p>Object properties should be accessed via dot notation, unless the key is a variable, a reserved word, or a string that would not be a valid identifier:</p>
+<pre><code class="js">prop = object.propertyName;
+prop = object[ variableKey ];
+prop = object['default'];
+prop = object['key-with-hyphens'];
+</code></pre>
+
+<h3 id="yoda-conditions">“Yoda” Conditions</h3>
+<p>One area we disagree with the Wordpress standard is Yoda Conditions... we'd prefer you didn't use them.   It's easier to read conditionals in the normal order <code>if ( something === true )</code>, just remember to use the correct number of equals signs.</p>
+<h3 id="iteration">Iteration</h3>
+<p>When iterating over a large collection using a <code>for</code> loop, it is recommended to store the loop’s max value as a variable rather than re-computing the maximum every time:</p>
+<pre><code class="js">// Good &amp; Efficient
+var i, max;
+
+// getItemCount() gets called once
+for ( i = 0, max = getItemCount(); i &lt; max; i++ ) {
+    // Do stuff
+}
+
+// Bad &amp; Potentially Inefficient:
+// getItemCount() gets called every time
+for ( i = 0; i &lt; getItemCount(); i++ ) {
+    // Do stuff
+}
+</code></pre>
+
+<h3 id="underscorejs-collection-functions">Underscore.js Collection Functions</h3>
+<p>Learn and understand Underscore’s <a href="http://underscorejs.org/#collections">collection and array methods</a>. These functions, including <code>_.each</code>, <code>_.map</code>, and <code>_.reduce</code>, allow for efficient, readable transformations of large data sets.</p>
+<p>Underscore also permits jQuery-style chaining with regular JavaScript objects:</p>
+<pre><code class="js">var obj = {
+    first: 'thing 1',
+    second: 'thing 2',
+    third: 'lox'
+};
+
+var arr = _.chain( obj )
+    .keys()
+    .map(function( key ) {
+        return key + ' comes ' + obj[ key ];
+    })
+    // Exit the chain
+    .value();
+
+// arr === [ 'first comes thing 1', 'second comes thing 2', 'third comes lox' ]
+</code></pre>
+
+<h3 id="iterating-over-jquery-collections">Iterating Over jQuery Collections</h3>
+<pre><code class="js">$tabs.each(function( index, element ) {
+    var $element = $( element );
+
+    // Do stuff to $element
+});
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
