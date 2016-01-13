@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/php/php-coding-standards/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/php/php-documentation-standards/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/javascript/js-coding-standards/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/javascript/js-documentation-standards/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/html/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/css/</loc>
+     <lastmod>2016-01-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

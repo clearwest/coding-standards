@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>HTML - ClearWest Coding Standards</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">ClearWest Coding Standards</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../php/php-coding-standards/">PHP Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../php/php-documentation-standards/">PHP Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">JavaScript <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../javascript/js-coding-standards/">JavaScript Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../javascript/js-documentation-standards/">JavaScript Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">HTML</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../css/">CSS</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../javascript/js-documentation-standards/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../css/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#html-coding-standards">HTML Coding Standards</a></li>
+        
+            <li><a href="#validation">Validation</a></li>
+        
+            <li><a href="#self-closing-elements">Self-closing Elements</a></li>
+        
+            <li><a href="#attributes-and-tags">Attributes and Tags</a></li>
+        
+            <li><a href="#quotes">Quotes</a></li>
+        
+            <li><a href="#indentation">Indentation</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="html-coding-standards">HTML Coding Standards</h1>
+<p>HTML code standards adapted from <a href="http://developer.fellowshipone.com/patterns/code.php">Fellowship Tech Code Standards</a> (CC license).</p>
+<h2 id="validation">Validation</h2>
+<p>All HTML pages should be verified against the <a href="http://validator.w3.org/">W3C validator</a> to ensure that the markup is well formed. This in and of itself is not directly indicative of good code, but it helps to weed out problems that are able to be tested via automation. It is no substitute for manual code review.</p>
+<h2 id="self-closing-elements">Self-closing Elements</h2>
+<p>All tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it:</p>
+<pre><code class="html">&lt;br /&gt;
+</code></pre>
+
+<p>rather than the compact but incorrect:</p>
+<pre><code class="html">&lt;br/&gt;
+</code></pre>
+
+<p>The W3C specifies that a single space should precede the self-closing slash (<a href="http://w3.org/TR/xhtml1/#C_2">source</a>).</p>
+<h2 id="attributes-and-tags">Attributes and Tags</h2>
+<p>All tags and attributes must be written in lowercase. Additionally, attribute values should be lowercase when the purpose of the text therein is only to be interpreted by machines. For instances in which the data needs to be human readable, proper title capitalization should be followed.</p>
+<p>For machines:</p>
+<pre><code class="html">&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+</code></pre>
+
+<p>For humans:</p>
+<pre><code class="html">&lt;a href=&quot;http://example.com/&quot; title=&quot;Description Here&quot;&gt;Example.com&lt;/a&gt;
+</code></pre>
+
+<h2 id="quotes">Quotes</h2>
+<p>According to the W3C specifications for XHTML, all attributes must have a value, and must use double- or single-quotes (<a href="http://www.w3.org/TR/xhtml1/#h-4.4">source</a>). The following are examples of proper and improper usage of quotes and attribute/value pairs.</p>
+<p>Correct:</p>
+<pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;email&quot; disabled=&quot;disabled&quot; /&gt;
+&lt;input type='text' name='email' disabled='disabled' /&gt;
+</code></pre>
+
+<p>Incorrect:</p>
+<pre><code class="html">&lt;input type=text name=email disabled&gt;
+</code></pre>
+
+<p>In HTML, attributes do not all have to have values, and attribute values do not always have to be quoted. While all of the examples above are valid HTML, failing to quote attributes can lead to security vulnerabilities. Always quote attributes.</p>
+<h2 id="indentation">Indentation</h2>
+<p>As with PHP, HTML indentation should always reflect logical structure. Use tabs and not spaces.</p>
+<p>When mixing PHP and HTML together, indent PHP blocks to match the surrounding HTML code. Closing PHP blocks should match the same indentation level as the opening block.</p>
+<p>Correct:</p>
+<pre><code class="html">&lt;?php if ( ! have_posts() ) : ?&gt;
+    &lt;div id=&quot;post-1&quot; class=&quot;post&quot;&gt;
+        &lt;h1 class=&quot;entry-title&quot;&gt;Not Found&lt;/h1&gt;
+        &lt;div class=&quot;entry-content&quot;&gt;
+            &lt;p&gt;Apologies, but no results were found.&lt;/p&gt;
+            &lt;?php get_search_form(); ?&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;?php endif; ?&gt;
+</code></pre>
+
+<p>Incorrect:</p>
+<pre><code class="html">        &lt;?php if ( ! have_posts() ) : ?&gt;
+        &lt;div id=&quot;post-0&quot; class=&quot;post error404 not-found&quot;&gt;
+            &lt;h1 class=&quot;entry-title&quot;&gt;Not Found&lt;/h1&gt;
+            &lt;div class=&quot;entry-content&quot;&gt;
+            &lt;p&gt;Apologies, but no results were found.&lt;/p&gt;
+&lt;?php get_search_form(); ?&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+&lt;?php endif; ?&gt;
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
