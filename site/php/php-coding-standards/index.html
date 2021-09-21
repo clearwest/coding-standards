@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>PHP Coding Standards - ClearWest Coding Standards</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-42020797-14', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">ClearWest Coding Standards</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">PHP Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../php-documentation-standards/">PHP Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">JavaScript <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../javascript/js-coding-standards/">JavaScript Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../javascript/js-documentation-standards/">JavaScript Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../html/">HTML</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../css/">CSS</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../php-documentation-standards/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#php-coding-standards">PHP Coding Standards</a></li>
+        
+            <li><a href="#single-and-double-quotes">Single and Double Quotes</a></li>
+        
+            <li><a href="#indentation">Indentation</a></li>
+        
+            <li><a href="#brace-style">Brace Style</a></li>
+        
+            <li><a href="#regular-expressions">Regular Expressions</a></li>
+        
+            <li><a href="#no-shorthand-php-tags">No Shorthand PHP Tags</a></li>
+        
+            <li><a href="#remove-trailing-spaces">Remove Trailing Spaces</a></li>
+        
+            <li><a href="#space-usage">Space Usage</a></li>
+        
+            <li><a href="#formatting-sql-statements">Formatting SQL statements</a></li>
+        
+            <li><a href="#naming-conventions">Naming Conventions</a></li>
+        
+            <li><a href="#self-explanatory-flag-values-for-function-arguments">Self-Explanatory Flag Values for Function Arguments</a></li>
+        
+            <li><a href="#ternary-operator">Ternary Operator</a></li>
+        
+            <li><a href="#yoda-conditions">Yoda Conditions</a></li>
+        
+            <li><a href="#clever-code">Clever Code</a></li>
+        
+            <li><a href="#error-control-operator">Error Control Operator @</a></li>
+        
+            <li><a href="#dont-extract">Don’t extract()</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="php-coding-standards">PHP Coding Standards</h1>
+<p>These guidelines are based on the <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/">WordPress PHP Coding Standards</a> (similar to the PEAR standards), but have been modified to serve as a general purpose standard for any PHP code.</p>
+<h2 id="single-and-double-quotes">Single and Double Quotes</h2>
+<p>Use single and double quotes when appropriate. If you’re not evaluating anything in the string, use single quotes. You should almost never have to escape quotes in a string, because you can just alternate your quoting style, like so:</p>
+<pre><code class="php">echo '&lt;a href=&quot;/static/link&quot; title=&quot;Yeah yeah!&quot;&gt;Link name&lt;/a&gt;';
+echo &quot;&lt;a href='$link' title='$linktitle'&gt;$linkname&lt;/a&gt;&quot;;
+</code></pre>
+
+<p><strong>WP Note:</strong> <em>Text that goes into attributes should be run through <code>esc_attr()</code> so that single or double quotes do not end the attribute value and invalidate the HTML and cause a security issue.</em>  (In other environments/frameworks, use appropriate helper functions for escaping.)</p>
+<h2 id="indentation">Indentation</h2>
+<p>Your indentation should always reflect logical structure. Use <strong>real tabs and not spaces</strong> (thank you WordPress!), as this allows the most flexibility across clients.</p>
+<p>Exception: if you have a block of code that would be more readable if things are aligned, use spaces:</p>
+<pre><code class="php">[tab]$foo   = 'somevalue';
+[tab]$foo2  = 'somevalue2';
+[tab]$foo34 = 'somevalue3';
+[tab]$foo5  = 'somevalue4';
+</code></pre>
+
+<p>For associative arrays, values should start on a new line. Note the comma after the last array item: this is recommended because it makes it easier to change the order of the array, and makes for cleaner diffs when new items are added.</p>
+<pre><code class="php">$my_array = array(
+[tab]'foo'   =&gt; 'somevalue',
+[tab]'foo2'  =&gt; 'somevalue2',
+[tab]'foo3'  =&gt; 'somevalue3',
+[tab]'foo34' =&gt; 'somevalue3',
+);
+</code></pre>
+
+<p>Rule of thumb: Tabs should be used at the beginning of the line for indentation, while spaces can be used mid-line for alignment.</p>
+<h2 id="brace-style">Brace Style</h2>
+<p>Braces shall be used for all blocks in the style shown here:</p>
+<pre><code class="php">if ( condition ) {
+    action1();
+    action2();
+} elseif ( condition2 &amp;&amp; condition3 ) {
+    action3();
+    action4();
+} else {
+    defaultaction();
+}
+</code></pre>
+
+<p>Furthermore, if you have a really long block, consider whether it can be broken into two or more shorter blocks or functions. If you consider such a long block unavoidable, please put a short comment at the end so people can tell at glance what that ending brace ends – typically this is appropriate for a logic block, longer than about 35 rows, but any code that’s not intuitively obvious can be commented.</p>
+<p>Braces should always be used, even when they are not required:</p>
+<pre><code class="php">if ( condition ) {
+    action0();
+}
+
+if ( condition ) {
+    action1();
+} elseif ( condition2 ) {
+    action2a();
+    action2b();
+}
+
+foreach ( $items as $item ) {
+    process_item( $item );
+}
+</code></pre>
+
+<p>Note that requiring the use of braces just means that single-statement inline control structures are prohibited. You are free to use the alternative syntax for control structures (e.g. <code>if</code>/<code>endif</code>, <code>while</code>/<code>endwhile</code>)—especially in your templates where PHP code is embedded within HTML, for instance:</p>
+<pre><code class="html">&lt;?php if ( have_posts() ) : ?&gt;
+    &lt;div class=&quot;hfeed&quot;&gt;
+        &lt;?php while ( have_posts() ) : the_post(); ?&gt;
+            &lt;article id=&quot;post-&lt;?php the_ID() ?&gt;&quot; class=&quot;&lt;?php post_class() ?&gt;&quot;&gt;
+                &lt;!-- ... --&gt;
+            &lt;/article&gt;
+        &lt;?php endwhile; ?&gt;
+    &lt;/div&gt;
+&lt;?php endif; ?&gt;
+</code></pre>
+
+<h2 id="regular-expressions">Regular Expressions</h2>
+<p>Perl compatible regular expressions (PCRE, <code>preg_</code> functions) should be used in preference to their POSIX counterparts. Never use the <code>/e</code> switch, use <code>preg_replace_callback</code> instead.</p>
+<p>It’s most convenient to use single-quoted strings for regular expressions since, contrary to double-quoted strings, they have only two metasequences: <code>\'</code> and <code>\\</code>.</p>
+<h2 id="no-shorthand-php-tags">No Shorthand PHP Tags</h2>
+<p>Important: Never use shorthand PHP start tags. Always use full PHP tags.</p>
+<p>Correct:</p>
+<pre><code class="php">&lt;?php ... ?&gt;
+&lt;?php echo $var; ?&gt;
+</code></pre>
+
+<p>Incorrect:</p>
+<pre><code class="php">&lt;? ... ?&gt;
+&lt;?= $var ?&gt;
+</code></pre>
+
+<h2 id="remove-trailing-spaces">Remove Trailing Spaces</h2>
+<p>Remove trailing whitespace at the end of each line of code. Omitting the closing PHP tag at the end of a file is preferred. If you use the tag, make sure you remove trailing whitespace.</p>
+<h2 id="space-usage">Space Usage</h2>
+<p>Always put spaces after commas, and on both sides of logical, comparison, string and assignment operators.</p>
+<pre><code class="php">x == 23
+foo &amp;&amp; bar
+! foo
+array( 1, 2, 3 )
+$baz . '-5'
+$term .= 'X'
+</code></pre>
+
+<p>Put spaces on both sides of the opening and closing parenthesis of <code>if</code>, <code>elseif</code>, <code>foreach</code>, <code>for</code>, and <code>switch</code> blocks.</p>
+<pre><code class="php">foreach ( $foo as $bar ) { ...
+</code></pre>
+
+<p>When defining a function, do it like so:</p>
+<pre><code class="php">function my_function( $param1 = 'foo', $param2 = 'bar' ) { ...
+</code></pre>
+
+<p>When calling a function, do it like so:</p>
+<pre><code class="php">my_function( $param1, func_param( $param2 ) );
+</code></pre>
+
+<p>When performing logical comparisons, do it like so:</p>
+<pre><code class="php">if ( ! $foo ) { ...
+</code></pre>
+
+<p>When type casting, do it like so:</p>
+<pre><code class="php">foreach ( (array) $foo as $bar ) { ...
+
+$foo = (boolean) $bar;
+</code></pre>
+
+<p>When referring to array items, only include a space around the index if it is a variable, for example:</p>
+<pre><code class="php">$x = $foo['bar']; // correct
+$x = $foo[ 'bar' ]; // incorrect
+
+$x = $foo[0]; // correct
+$x = $foo[ 0 ]; // incorrect
+
+$x = $foo[ $bar ]; // correct
+$x = $foo[$bar]; // incorrect
+</code></pre>
+
+<h2 id="formatting-sql-statements">Formatting SQL statements</h2>
+<p>When formatting SQL statements you may break it into several lines and indent if it is sufficiently complex to warrant it. Most statements work well as one line though. Always capitalize the SQL parts of the statement like <code>UPDATE</code> or <code>WHERE</code>.</p>
+<blockquote>
+<p>Be sure to escape inputs using the best practice for whichever environment/framework you are using</p>
+</blockquote>
+<ul>
+<li>Wordpress: <a href="https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#formatting-sql-statements">https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#formatting-sql-statements</a></li>
+</ul>
+<h2 id="naming-conventions">Naming Conventions</h2>
+<p>Use lowercase letters in variable, action, and function names (never camelCase). Separate words via underscores. Don’t abbreviate variable names un-necessarily; let the code be unambiguous and self-documenting.</p>
+<pre><code class="php">function some_name( $some_variable ) { [...] }
+</code></pre>
+
+<p>Class names should use capitalized words separated by underscores. Any acronyms should be all upper case.</p>
+<pre><code class="php">class Walker_Category extends Walker { [...] }
+class WP_HTTP { [...] }
+</code></pre>
+
+<p>Constants should be in all upper-case with underscores separating words:</p>
+<pre><code class="php">define( 'DOING_AJAX', true );
+</code></pre>
+
+<p>Files should be named descriptively using lowercase letters. Hyphens should separate words.</p>
+<pre><code>my-plugin-name.php
+</code></pre>
+
+<p>Class file names should be based on the class name with <code>class-</code> prepended and the underscores in the class name replaced with hyphens, for example <code>WP_Error</code> becomes:</p>
+<pre><code>class-wp-error.php
+</code></pre>
+
+<h2 id="self-explanatory-flag-values-for-function-arguments">Self-Explanatory Flag Values for Function Arguments</h2>
+<p>Prefer string values to just <code>true</code> and <code>false</code> when calling functions.</p>
+<pre><code class="php">// Incorrect
+function eat( $what, $slowly = true ) {
+...
+}
+eat( 'mushrooms' );
+eat( 'mushrooms', true ); // what does true mean?
+eat( 'dogfood', false ); // what does false mean? The opposite of true?
+</code></pre>
+
+<p>Since PHP doesn’t support named arguments, the values of the flags are meaningless, and each time we come across a function call like the examples above, we have to search for the function definition. The code can be made more readable by using descriptive string values, instead of booleans.</p>
+<pre><code class="php">// Correct
+function eat( $what, $speed = 'slowly' ) {
+...
+}
+eat( 'mushrooms' );
+eat( 'mushrooms', 'slowly' );
+eat( 'dogfood', 'quickly' );
+</code></pre>
+
+<p>When more words are needed to describe the function parameters, an $args array may be a better pattern.</p>
+<pre><code class="php">// Even Better
+function eat( $what, $args ) {
+...
+}
+eat ( 'noodles', array( 'speed' =&gt; 'moderate' ) );
+</code></pre>
+
+<h2 id="ternary-operator">Ternary Operator</h2>
+<p>Ternary operators are fine, but always have them test if the statement is true, not false. Otherwise, it just gets confusing. (An exception would be using ! empty(), as testing for false here is generally more intuitive.)</p>
+<p>For example:</p>
+<pre><code class="php">// (if statement is true) ? (do this) : (else, do this);
+$musictype = ( $music === 'jazz' ) ? 'cool' : 'blah';
+// (if field is not empty ) ? (do this) : (else, do this);
+</code></pre>
+
+<h2 id="yoda-conditions">Yoda Conditions</h2>
+<p>One area we disagree with the Wordpress standard is Yoda Conditions... we'd prefer you didn't use them.   It's easier to read conditionals in the normal order <code>if ( something === true )</code>, just remember to use the correct number of equals signs (3 by default for strict comparsions, unless you explicitly <em>want</em> type juggling).</p>
+<h2 id="clever-code">Clever Code</h2>
+<p>In general, readability is more important than cleverness or brevity.</p>
+<pre><code class="php">isset( $var ) || $var = some_function();
+</code></pre>
+
+<p>Although the above line is clever, it takes a while to grok if you’re not familiar with it. So, just write it like this:</p>
+<pre><code class="php">if ( ! isset( $var ) ) {
+    $var = some_function();
+}
+</code></pre>
+
+<h2 id="error-control-operator">Error Control Operator @</h2>
+<p><strong>Don't use it unless you really <em>REALLY</em> have to, you lazy bastard</strong></p>
+<p>As noted in the <a href="http://www.php.net//manual/en/language.operators.errorcontrol.php">PHP docs</a>:</p>
+<blockquote>
+<p>PHP supports one error control operator: the at sign (@). When prepended to an expression in PHP, any error messages that might be generated by that expression will be ignored.</p>
+</blockquote>
+<p>While this operator does exist in WordPress Core, it is often used lazily instead of doing proper error checking. Its use is highly discouraged, as even the PHP docs also state:</p>
+<blockquote>
+<p>Warning: Currently the “@” error-control operator prefix will even disable error reporting for critical errors that will terminate script execution. Among other things, this means that if you use “@” to suppress errors from a certain function and either it isn’t available or has been mistyped, the script will die right there with no indication as to why.</p>
+</blockquote>
+<h2 id="dont-extract">Don’t extract()</h2>
+<blockquote>
+<p>extract() is a terrible function that makes code harder to debug and harder to understand. We should discourage it’s use and remove all of our uses of it.</p>
+</blockquote>
+<p>Joseph Scott has a <a href="http://josephscott.org/archives/2009/02/i-dont-like-phps-extract-function/">good write-up of why it’s bad</a>.</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

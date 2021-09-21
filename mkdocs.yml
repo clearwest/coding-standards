@@ -1,0 +1,14 @@
+site_name: ClearWest Coding Standards
+pages:
+- Home: index.md
+- PHP:
+  - 'PHP Coding Standards': 'php/php-coding-standards.md'
+  - 'PHP Documentation Standards': 'php/php-documentation-standards.md'
+- JavaScript:
+  - 'JavaScript Coding Standards': 'javascript/js-coding-standards.md'
+  - 'JavaScript Documentation Standards': 'javascript/js-documentation-standards.md'
+- HTML: html.md
+- CSS: css.md
+markdown_extensions:
+- fenced_code
+google_analytics: ['UA-42020797-14', 'auto']

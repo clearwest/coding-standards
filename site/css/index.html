@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>CSS - ClearWest Coding Standards</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-42020797-14', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">ClearWest Coding Standards</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../php/php-coding-standards/">PHP Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../php/php-documentation-standards/">PHP Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">JavaScript <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../javascript/js-coding-standards/">JavaScript Coding Standards</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../javascript/js-documentation-standards/">JavaScript Documentation Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../html/">HTML</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">CSS</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../html/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#css-coding-standards">CSS Coding Standards</a></li>
+        
+            <li><a href="#structure">Structure</a></li>
+        
+            <li><a href="#selectors">Selectors</a></li>
+        
+            <li><a href="#properties">Properties</a></li>
+        
+            <li><a href="#values">Values</a></li>
+        
+            <li><a href="#media-queries">Media Queries</a></li>
+        
+            <li><a href="#commenting">Commenting</a></li>
+        
+            <li><a href="#best-practices">Best Practices</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="css-coding-standards">CSS Coding Standards</h1>
+<h2 id="structure">Structure</h2>
+<p>There are plenty of different methods for structuring a stylesheet. It is important to retain a high degree of legibility. This enables subsequent contributors to have a clear understanding of the flow of the document.</p>
+<ul>
+<li>Use tabs, not spaces, to indent each property.</li>
+<li>Add two blank lines between sections and one blank line between blocks in a section.</li>
+<li>Each selector should be on its own line, ending in either a comma or an opening curly brace. Property-value pairs should be on their own line, with one tab of indentation and an ending semicolon. The closing brace should be flush left, using the same level of indentation as the opening selector.</li>
+</ul>
+<p>Correct:</p>
+<pre><code class="css">#selector-1,
+#selector-2,
+#selector-3 {
+    background: #fff;
+    color: #000;
+}
+</code></pre>
+
+<pre><code class="css">#selector-1, #selector-2, #selector-3 {
+    background: #fff;
+    color: #000;
+    }
+
+#selector-1 { background: #fff; color: #000; }
+</code></pre>
+
+<h2 id="selectors">Selectors</h2>
+<p>With specificity, comes great responsibility. Broad selectors allow us to be efficient, yet can have adverse consequences if not tested. Location-specific selectors can save us time, but will quickly lead to a cluttered stylesheet. Exercise your best judgement to create selectors that find the right balance between contributing to the overall style and layout of the DOM.</p>
+<ul>
+<li>Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores.</li>
+<li>Use human readable selectors that describe what element(s) they style.</li>
+<li>Attribute selectors should use double quotes around values</li>
+<li>Refrain from using over-qualified selectors, div.container can simply be stated as .container</li>
+</ul>
+<p>Correct:</p>
+<pre><code class="css">#comment-form {
+    margin: 1em 0;
+}
+
+input[type=&quot;text&quot;] {
+    line-height: 1.1;
+}
+</code></pre>
+
+<p>Incorrect:</p>
+<pre><code class="css">#commentForm { /* Avoid camelcase. */
+    margin: 0;
+}
+
+#comment_form { /* Avoid underscores. */
+    margin: 0;
+}
+
+div#comment_form { /* Avoid over-qualification. */
+    margin: 0;
+}
+
+#c1-xr { /* What is a c1-xr?! Use a better name. */
+    margin: 0;
+}
+
+input[type=text] { /* Should be [type=&quot;text&quot;] */
+    line-height: 110% /* Also doubly incorrect */
+}
+</code></pre>
+
+<h2 id="properties">Properties</h2>
+<p>Similar to selectors, properties that are too specific will hinder the flexibility of the design. Less is more. Make sure you are not repeating styling or introducing fixed dimensions (when a fluid solution is more acceptable).</p>
+<ul>
+<li>Properties should be followed by a colon and a space.</li>
+<li>All properties and values should be lowercase, except for font names and vendor-specific properties.</li>
+<li>Use hex code for colors, or rgba() if opacity is needed. Avoid RGB format and uppercase, and shorten values when possible: #fff instead of #FFFFFF.</li>
+<li>Use shorthand (except when overriding styles) for background, border, font, list-style, margin, and padding values as much as possible. (For a shorthand reference, see <a href="https://codex.wordpress.org/CSS_Shorthand">CSS Shorthand</a>.)</li>
+</ul>
+<h3 id="property-ordering">Property Ordering</h3>
+<blockquote>
+<p>“Group like properties together, especially if you have a lot of them.”
+— Nacin</p>
+</blockquote>
+<p>Above all else, choose something that is meaningful to you and semantic in some way. Random ordering is chaos, not poetry. In WordPress Core, our choice is logical or grouped ordering, wherein properties are grouped by meaning and ordered specifically within those groups. The properties within groups are also strategically ordered to create transitions between sections, such as background directly before color. The baseline for ordering is:</p>
+<ul>
+<li>Display</li>
+<li>Positioning</li>
+<li>Box model</li>
+<li>Colors and Typography</li>
+<li>Other</li>
+</ul>
+<p>Things that are not yet used in core itself, such as CSS3 animations, may not have a prescribed place above but likely would fit into one of the above in a logical manner. Just as CSS is evolving, so our standards will evolve with it.</p>
+<p>Top/Right/Bottom/Left (TRBL/trouble) should be the order for any relevant properties (e.g. margin), much as the order goes in values. Corner specifiers (e.g. border-radius-<em>-</em>) should be top-left, top-right, bottom-right, bottom-left. This is derived from how shorthand values would be ordered.</p>
+<p>Example:</p>
+<pre><code class="css">#overlay {
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    background: #fff;
+    color: #777;
+}
+</code></pre>
+
+<p>Another method that is often used, including by the Automattic/WordPress.com Themes Team, is to order properties alphabetically, with or without certain exceptions.</p>
+<p>Example:</p>
+<pre><code class="css">#overlay {
+    background: #fff;
+    color: #777;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+}
+</code></pre>
+
+<h3 id="vendor-prefixes">Vendor Prefixes</h3>
+<p>Vendor prefixes should go longest (-webkit-) to shortest (unprefixed). All other spacing remains as per the rest of standards.</p>
+<pre><code class="css">.sample-output {
+    -webkit-box-shadow: inset 0 0 1px 1px #eee;
+    -moz-box-shadow: inset 0 0 1px 1px #eee;
+    box-shadow: inset 0 0 1px 1px #eee;
+}
+</code></pre>
+
+<h2 id="values">Values</h2>
+<p>There are numerous ways to input values for properties. Follow the guidelines below to help us retain a high degree of consistency.</p>
+<ul>
+<li>Space before the value, after the colon</li>
+<li>Do not pad parentheses with spaces</li>
+<li>Always end in a semicolon</li>
+<li>Use double quotes rather than single quotes, and only when needed, such as when a font name has a space.</li>
+<li>0 values should not have units unless necessary, such as with transition-duration.</li>
+<li>Line height should also be unit-less, unless necessary to be defined as a specific pixel value. This is more than just a style convention, but is worth mentioning here. More information: <a href="http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/">http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/</a></li>
+<li>Use a leading zero for decimal values, including in rgba().</li>
+<li>Multiple comma-separated values for one property should be separated by either a space or a newline, including within rgba(). Newlines should be used for lengthier multi-part values such as those for shorthand properties like box-shadow and text-shadow. Each subsequent value after the first should then be on a new line, indented to the same level as the selector and then spaced over to left-align with the previous value.</li>
+</ul>
+<p>Correct:</p>
+<pre><code class="css">.class { /* Correct usage of quotes */
+    background-image: url(images/bg.png);
+    font-family: &quot;Helvetica Neue&quot;, sans-serif;
+}
+
+.class { /* Correct usage of zero values */
+    font-family: Georgia, serif;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5),
+                       0 1px 0 #fff;
+}
+</code></pre>
+
+<p>Incorrect:</p>
+<pre><code class="css">.class { /* Avoid missing space and semicolon */
+    background:#fff
+}
+
+.class { /* Avoid adding a unit on a zero value */
+    margin: 0px 0px 20px 0px;
+}
+</code></pre>
+
+<h2 id="media-queries">Media Queries</h2>
+<p>Media queries allow us to gracefully degrade the DOM for different screen sizes. If you are adding any, be sure to test above and below the break-point you are targeting.</p>
+<ul>
+<li>It is generally advisable to keep media queries grouped by media at the bottom of the stylesheet.<ul>
+<li>An exception is made for the wp-admin.css file in core, as it is very large and each section essentially represents a stylesheet of its own. Media queries are therefore added at the bottom of sections as applicable.</li>
+</ul>
+</li>
+<li>Rule sets for media queries should be indented one level in.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="css">@media all and (max-width: 699px) and (min-width: 520px) {
+
+        /* Your selectors */
+}
+</code></pre>
+
+<h2 id="commenting">Commenting</h2>
+<ul>
+<li>Comment, and comment liberally. If there are concerns about file size, utilize minified files and the SCRIPT_DEBUG constant. Long comments should manually break the line length at 80 characters.</li>
+<li>A table of contents should be utilized for longer stylesheets, especially those that are highly sectioned. Using an index number (1.0, 1.1, 2.0, etc.) aids in searching and jumping to a location.</li>
+<li>Comments should be formatted much as PHPDoc is. The <a href="http://cssdoc.net/">CSSDoc</a> standard is not necessarily widely accepted or used but some aspects of it may be adopted over time. Section/subsection headers should have newlines before and after. Inline comments should not have empty newlines separating the comment from the item to which it relates.</li>
+</ul>
+<p>For sections and subsections:</p>
+<pre><code class="css">/**
+* #.# Section title
+*
+* Description of section, whether or not it has media queries, etc.
+*/
+
+.selector {
+    float: left;
+}
+</code></pre>
+
+<p>For inline:</p>
+<pre><code class="css">/* This is a comment about this selector */
+.another-selector {
+    position: absolute;
+    top: 0 !important; /* I should explain why this is so !important */
+}
+</code></pre>
+
+<h2 id="best-practices">Best Practices</h2>
+<p>Stylesheets tend to get long in length. Focus slowly gets lost whilst intended goals start repeating and overlapping. Writing smart code from the outset helps us retain the overview whilst remaining flexible throughout change.</p>
+<ul>
+<li>If you are attempting to fix an issue, attempt to remove code before adding more.</li>
+<li>Magic Numbers are unlucky. These are numbers that are used as quick fixes on a one-off basis. Example: .box { margin-top: 37px }.</li>
+<li>DOM will change over time, target the element you want to use as opposed to “finding it” through its parents. Example: Use .highlight on the element as opposed to .highlight a (where the selector is on the parent)</li>
+<li>Know when to use the height property. It should be used when you are including outside elements (such as images). Otherwise use line-height for more flexibility.</li>
+<li>Do not restate default property &amp; value combinations (for instance <code>display: block;</code> on block-level elements).</li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
