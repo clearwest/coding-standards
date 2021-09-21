@@ -1,23 +1,27 @@
 # JavaScript Coding Standards
 
-These guidelines are based on the [WordPress JavaScript Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/), but have been modified to serve as a general purpose standard for any JavaScript code.
+## Introduction
 
-The WordPress JavaScript Coding Standards are adapted from the [jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js), but differ in the following ways:
+These guidelines were originally based on the [WordPress JavaScript Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/), but have been modified to serve as a general purpose standard for any JavaScript code.
 
-- WordPress uses single quotation marks for string declarations.
+The WordPress JavaScript Coding Standards were themselves adapted from the [jQuery JavaScript Style Guide](http://contribute.jquery.org/style-guide/js), but differ in the following ways:
+
+- Use single quotation marks for string declarations.
 - Case statements are indented within switch blocks.
 - Function contents are consistently indented, including full-file closure wrappers.
-- Some whitespace rules differ, for consistency with the WordPress PHP coding standards.
+- Some whitespace rules differ, for consistency with our PHP coding standards.
 - jQuery’s 100-character hard line limit is encouraged, but not strictly enforced.
 
 ## Spacing
 
-Use spaces liberally throughout your code. “When in doubt, space it out.”
+We use real **TABS** for indentation, not spaces.  Spaces may be used for alignment in the middle of a line, but indentation should always be tabs.
 
-These rules encourage liberal spacing for improved developer readability. The minification process creates a file that is optimized for browsers to read and process.
+In general, use whitespace liberally throughout your code. “When in doubt, space it out.”
 
-- Indentation with tabs.
-- No whitespace at the end of line or on blank lines.
+Our goal is to make code as clear and easy to read for both yourself and future developers as possible.
+
+- Indent with tabs.
+- No whitespace at the end of a line.
 - Lines should usually be no longer than 80 characters, and should not exceed 100 (counting tabs as 4 spaces). This is a “soft” rule, but long lines generally indicate unreadable or disorganized code.
 - `if`/`else`/`for`/`while`/`try` blocks should **always use braces**, and always go on multiple lines.
 - Unary special-character operators (e.g., `++`, `--`) must not have space next to their operand.
@@ -40,9 +44,9 @@ Object declarations can be made on a single line if they are short (remember the
 ```js
 // Preferred
 var map = {
-    ready: 9,
-    when: 4,
-    'you are': 15
+	ready: 9,
+	when: 4,
+	'you are': 15
 };
  
 // Acceptable for small objects
@@ -50,7 +54,7 @@ var map = { ready: 9, when: 4, 'you are': 15 };
  
 // Bad
 var map = { ready: 9,
-    when: 4, 'you are': 15 };
+	when: 4, 'you are': 15 };
 ```
 
 ### Arrays and Function Calls
@@ -80,29 +84,29 @@ firstArrayElement = arr[0];
 // Function with a callback, object, or array as the sole argument:
 // No space on either side of the argument
 foo(function() {
-    // Do stuff
+	// Do stuff
 });
  
 foo({
-    a: 'alpha',
-    b: 'beta'
+	a: 'alpha',
+	b: 'beta'
 });
  
 foo([
-    'alpha',
-    'beta'
+	'alpha',
+	'beta'
 ]);
  
 // Function with a callback, object, or array as the first argument:
 // No space before the first argument
 foo(function() {
-    // Do stuff
+	// Do stuff
 }, options );
  
 // Function with a callback, object, or array as the last argument:
 // No space after after the last argument
 foo( data, function() {
-    // Do stuff
+	// Do stuff
 });
 ```
 
@@ -112,31 +116,31 @@ foo( data, function() {
 var i;
  
 if ( condition ) {
-    doSomething( 'with a string' );
+	doSomething( 'with a string' );
 } else if ( otherCondition ) {
-    otherThing({
-        key: value,
-        otherKey: otherValue
-    });
+	otherThing({
+		key: value,
+		otherKey: otherValue
+	});
 } else {
-    somethingElse( true );
+	somethingElse( true );
 }
  
 // Unlike jQuery, WordPress prefers a space after the ! negation operator.
 // This is also done to conform to our PHP standards.
 while ( ! condition ) {
-    iterating++;
+	iterating++;
 }
- 
+
 for ( i = 0; i < 100; i++ ) {
-    object[ array[ i ] ] = someFn( i );
-    $( '.container' ).val( array[ i ] );
+	object[ array[ i ] ] = someFn( i );
+	$( '.container' ).val( array[ i ] );
 }
- 
+
 try {
-    // Expressions
+	// Expressions
 } catch ( e ) {
-    // Expressions
+	// Expressions
 }
 ```
 
@@ -152,11 +156,11 @@ Tabs should be used for indentation. Even if the entire file is contained in a c
 
 ```js
 (function( $ ) {
-    // Expressions indented
- 
-    function doSomething() {
-        // Expressions indented
-    }
+	// Expressions indented
+
+	function doSomething() {
+		// Expressions indented
+	}
 })( jQuery );
 ```
 
@@ -168,26 +172,26 @@ Tabs should be used for indentation. Even if the entire file is contained in a c
 var a, b, c;
  
 if ( myFunction() ) {
-    // Expressions
+	// Expressions
 } else if ( ( a && b ) || c ) {
-    // Expressions
+	// Expressions
 } else {
-    // Expressions
+	// Expressions
 }
 ```
 
 ### Multi-line Statements
 
-When a statement is too long to fit on one line, line breaks must occur after an operator.
+When a statement is too long to fit on one line, line breaks should occur BEFORE an operator.  (This is something we differ from the WordPress standards on, since we prefer to have cleaner commit diffs.)
 
 ```js
 // Bad
-var html = '<p>The sum of ' + a + ' and ' + b + ' plus ' + c
-    + ' is ' + ( a + b + c );
+var html = '<p>The sum of ' + a + ' and ' + b + ' plus ' + c +
+	' is ' + ( a + b + c );
  
 // Good
-var html = '<p>The sum of ' + a + ' and ' + b + ' plus ' + c +
-    ' is ' + ( a + b + c );
+var html = '<p>The sum of ' + a + ' and ' + b + ' plus ' + c
+	+ ' is ' + ( a + b + c );
 ```
 
 Lines should be broken into logical groups if it improves readability, such as splitting each expression of a ternary operator onto its own line, even if both will fit on a single line.
@@ -198,30 +202,33 @@ var baz = ( true === conditionalStatement() ) ? 'thing 1' : 'thing 2';
  
 // Better
 var baz = firstCondition( foo ) && secondCondition( bar ) ?
-    qux( foo, bar ) :
-    foo;
+	qux( foo, bar ) :
+	foo;
 ```
 
-When a conditional is too long to fit on one line, successive lines must be indented one extra level to distinguish them from the body.
+When a conditional is too long to fit on one line, it can be split into multiple lines, like so:
 
 ```js
-if ( firstCondition() && secondCondition() &&
-        thirdCondition() ) {
-    doStuff();
+if (
+	firstCondition()
+	&& secondCondition()
+	&& thirdCondition() 
+) {
+	doStuff();
 }
 ```
 
 ### Chained Method Calls
 
-When a chain of method calls is too long to fit on one line, there must be one call per line, with the first call on a separate line from the object the methods are called on. If the method changes the context, an extra level of indentation must be used.
+When a chain of method calls is too long to fit on one line, there must be one call per line, with the first call on a separate line from the object the methods are called on.
 
 ```js
 elements
-    .addClass( 'foo' )
-    .children()
-        .html( 'hello' )
-    .end()
-    .appendTo( 'body' );
+	.addClass( 'foo' )
+	.children()
+	.html( 'hello' )
+	.end()
+	.appendTo( 'body' );
 ```
 
 ## Assignments and Globals
@@ -235,8 +242,8 @@ Assignments within the `var` statement should be listed on individual lines, whi
 ```js
 // Good
 var k, m, length,
-    // Indent subsequent lines by one tab
-    value = 'WordPress';
+	// Indent subsequent lines by one tab
+	value = 'WordPress';
  
 // Bad
 var foo = true;
@@ -247,8 +254,6 @@ var c;
 ```
 
 ### Globals
-
-In the past, WordPress core made heavier use of global variables. Since core JavaScript files are sometimes used within plugins, existing globals should not be removed.
 
 All globals used within a file should be documented at the top of that file. Multiple globals can be comma-separated.
 
@@ -262,23 +267,21 @@ The “true” after `passwordStrength` means that this global is being defined 
 
 #### Common Libraries
 
-Backbone, jQuery, Underscore, and the global `wp` object are all registered as allowed globals in the root `.jshintrc` file.
-
-Backbone and Underscore may be accessed directly at any time. jQuery should be accessed through `$` by passing the `jQuery` object into an anonymous function:
+For WordPress projects (plugins, themes): jQuery should be accessed through `$` by passing the `jQuery` object into an anonymous function:
 
 ```js
 (function( $ ) {
-  // Expressions
+	// Expressions
 })( jQuery );
 ```
 
 This will negate the need to call `.noConflict()`, or to set `$` using another variable.
 
-Files which add to, or modify, the `wp` object must safely access the global to avoid overwriting previously set properties:
+Files which add to, or modify, a global object must safely access the global to avoid overwriting previously set properties:
 
 ```js
-// At the top of the file, set "wp" to its existing value (if present)
-window.wp = window.wp || {};
+// At the top of the file, set "myGlobalObject" to its existing value (if present)
+window.myGlobalObject = window.myGlobalObject || {};
 ```
 
 ## Naming Conventions
@@ -315,7 +318,7 @@ Inline comments are allowed as an exception when used to annotate special argume
 
 ```js
 function foo( types, selector, data, fn, /* INTERNAL */ one ) {
-    // Do stuff
+	// Do stuff
 }
 ```
 
@@ -326,7 +329,7 @@ Strict equality checks (`===`) must be used in favor of abstract equality checks
 ```js
 // Check for both undefined and null values, for some important reason.
 if ( undefOrNull == null ) {
-    // Expressions
+	// Expressions
 }
 ```
 
@@ -345,10 +348,10 @@ These are the preferred ways of checking the type of an object:
 - null: `object === null`
 - null or undefined: `object == null`
 - undefined:
-    - Global Variables: `typeof variable === 'undefined'`
-    - Local Variables: `variable === undefined`
-    - Properties: `object.prop === undefined`
-    - Any of the above: `_.isUndefined( object )`
+	- Global Variables: `typeof variable === 'undefined'`
+	- Local Variables: `variable === undefined`
+	- Properties: `object.prop === undefined`
+	- Any of the above: `_.isUndefined( object )`
 
 Anywhere Backbone or Underscore are already used, you are encouraged to use Underscore.js‘s type checking methods over jQuery’s.
 
@@ -369,8 +372,6 @@ When a string contains single quotes, they need to be escaped with a backslash (
 
 ## Switch Statements
 
-The usage of `switch` statements is generally discouraged, but can be useful when there are a large number of cases – especially when multiple cases can be handled by the same block, or fall-through logic (the `default` case) can be leveraged.
-
 When using `switch` statements:
 
 – Use a `break` for each case other than `default`. When allowing statements to “fall through,” note that explicitly.
@@ -378,17 +379,17 @@ When using `switch` statements:
 
 ```js
 switch ( event.keyCode ) {
- 
-    // ENTER and SPACE both trigger x()
-    case $.ui.keyCode.ENTER:
-    case $.ui.keyCode.SPACE:
-        x();
-        break;
-    case $.ui.keyCode.ESCAPE:
-        y();
-        break;
-    default:
-        z();
+
+	// ENTER and SPACE both trigger x()
+	case $.ui.keyCode.ENTER:
+	case $.ui.keyCode.SPACE:
+		x();
+		break;
+	case $.ui.keyCode.ESCAPE:
+		y();
+		break;
+	default:
+		z();
 }
 ```
 
@@ -396,21 +397,21 @@ It is not recommended to return a value from within a switch statement: use the 
 
 ```js
 function getKeyCode( keyCode ) {
-    var result;
- 
-    switch ( event.keyCode ) {
-        case $.ui.keyCode.ENTER:
-        case $.ui.keyCode.SPACE:
-            result = 'commit';
-            break;
-        case $.ui.keyCode.ESCAPE:
-            result = 'exit';
-            break;
-        default:
-            result = 'default';
-    }
- 
-    return result;
+	var result;
+
+	switch ( event.keyCode ) {
+		case $.ui.keyCode.ENTER:
+		case $.ui.keyCode.SPACE:
+			result = 'commit';
+			break;
+		case $.ui.keyCode.ESCAPE:
+			result = 'exit';
+			break;
+		default:
+			result = 'default';
+	}
+
+	return result;
 }
 ```
 
@@ -461,7 +462,7 @@ prop = object['key-with-hyphens'];
 
 ### “Yoda” Conditions
 
-One area we disagree with the Wordpress standard is Yoda Conditions... we'd prefer you didn't use them.   It's easier to read conditionals in the normal order `if ( something === true )`, just remember to use the correct number of equals signs.
+An area we disagree with the WordPress standard is Yoda Conditions... we'd prefer that you did NOT use them.  It's easier to read conditionals in the normal order `if ( something === true )`, just remember to use the correct number of equals signs.
 
 ### Iteration
 
@@ -473,13 +474,13 @@ var i, max;
  
 // getItemCount() gets called once
 for ( i = 0, max = getItemCount(); i < max; i++ ) {
-    // Do stuff
+	// Do stuff
 }
  
 // Bad & Potentially Inefficient:
 // getItemCount() gets called every time
 for ( i = 0; i < getItemCount(); i++ ) {
-    // Do stuff
+	// Do stuff
 }
 ```
 
@@ -491,18 +492,18 @@ Underscore also permits jQuery-style chaining with regular JavaScript objects:
 
 ```js
 var obj = {
-    first: 'thing 1',
-    second: 'thing 2',
-    third: 'lox'
+	first: 'thing 1',
+	second: 'thing 2',
+	third: 'lox'
 };
  
 var arr = _.chain( obj )
-    .keys()
-    .map(function( key ) {
-        return key + ' comes ' + obj[ key ];
-    })
-    // Exit the chain
-    .value();
+	.keys()
+	.map(function( key ) {
+		return key + ' comes ' + obj[ key ];
+	})
+	// Exit the chain
+	.value();
  
 // arr === [ 'first comes thing 1', 'second comes thing 2', 'third comes lox' ]
 ```
@@ -511,8 +512,8 @@ var arr = _.chain( obj )
 
 ```js
 $tabs.each(function( index, element ) {
-    var $element = $( element );
- 
-    // Do stuff to $element
+	var $element = $( element );
+
+	// Do stuff to $element
 });
 ```
